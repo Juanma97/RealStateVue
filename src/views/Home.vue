@@ -2,12 +2,10 @@
   <div class="container-home">
     <ToolbarComponent title="Inicio"/>
     <div class="container-pisos">
-      <router-link tag="upload" to="/piso">
-        <div class="pisos" v-for="(piso,i) in pisos" :key="i">
-          <img class="img-piso" v-bind:src="piso.imagen1"/>
-          <h4>{{piso.titulo}}</h4>
-        </div>
-      </router-link>
+      <div class="pisos" v-for="(piso,i) in pisos" :key="i" @click="open(piso)">
+        <img class="img-piso" v-bind:src="piso.imagen1"/>
+        <h4>{{piso.titulo}}</h4>
+      </div>
     </div>
   </div>
 </template>
@@ -32,6 +30,11 @@ import firebase from 'firebase';
       console.log(snapshot.val())
       this.pisos = snapshot.val()
     })
+  },
+  methods: {
+    open(piso){
+      
+    }
   }
   }
 </script>

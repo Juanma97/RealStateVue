@@ -14,6 +14,11 @@
         v-model="localizacion"
         outline
         ></v-text-field>
+        <h2>Planta</h2>
+        <v-text-field
+        v-model="planta"
+        outline
+        ></v-text-field>
         <h2>Descripcion</h2>
         <v-textarea
         v-model="descripcion"
@@ -29,6 +34,7 @@
         v-model="habitaciones"
         outline
         ></v-text-field>
+
         <div class="things">
           <div>
             <h2>Ascensor</h2>
@@ -82,6 +88,11 @@
         v-model="metros"
         outline
         ></v-text-field>
+        <h2>Metros cuadrados utiles</h2>
+        <v-text-field
+        v-model="metrosUtiles"
+        outline
+        ></v-text-field>
         <UploadImages number="Primera" @downloadURL="saveFirstImage"/>
         <UploadImages number="Segunda" @downloadURL="saveSecondImage"/>
         <UploadImages number="Tercera" @downloadURL="saveThirdImage"/>
@@ -120,6 +131,8 @@ export default {
       precio: '',
       tipo: '',
       metros: '',
+      metrosUtiles: '',
+      planta: '',
       imagen1: '',
       imagen2: '',
       imagen3: '',
@@ -158,6 +171,8 @@ export default {
         metros: this.metros,
         tipo: this.tipo,
         precio: this.precio,
+        metrosUtiles: this.metrosUtiles,
+        planta: this.planta,
       })
     },
     saveFirstImage(value){
